@@ -1,6 +1,7 @@
 // starter code in both routes/celebrities.routes.js and routes/movies.routes.js
 const router = require('express').Router()
 const Celebrity = require("../models/Celebrity.model")
+console.log('Celebrity: ', Celebrity);
 
 // all your routes here
 
