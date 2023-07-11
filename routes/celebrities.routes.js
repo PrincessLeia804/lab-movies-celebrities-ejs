@@ -1,11 +1,10 @@
 // starter code in both routes/celebrities.routes.js and routes/movies.routes.js
 const router = require('express').Router()
 const Celebrity = require("../models/Celebrity.model")
-console.log('Celebrity: ', Celebrity);
 
 // all your routes here
 
-// Get all celebrities
+/* GET all celebrities */
 router.get("/", async (req, res) => {
     try{
         const allCelebrities = await Celebrity.find()
@@ -28,10 +27,10 @@ router.post("/create", async (req, res) => {
     try{
         const newCelebrity = await Celebrity.create(data)
         console.log(newCelebrity);
-        res.render("celebrities/celebrities")
+        res.redirect("/celebrities/")
     } catch(err){
         console.log(err);
-        res.render("celebrities/new-celebrity")
+        res.redirect("/new-celebrity")
     }
 })
 
