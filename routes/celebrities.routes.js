@@ -26,7 +26,6 @@ router.post("/create", async (req, res) => {
 
     try{
         const newCelebrity = await Celebrity.create(data)
-        console.log(newCelebrity);
         res.redirect("/celebrities/")
     } catch(err){
         console.log(err);
